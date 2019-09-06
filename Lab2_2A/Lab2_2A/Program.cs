@@ -17,7 +17,7 @@ namespace Lab2_2A
 
             // Recieve salary from user
             WriteLine("What is your salary?");
-            double salary = Convert.ToDouble(ReadLine());
+            double salary = Double.Parse(ReadLine());
 
             // Print current salary
             WriteLine("Current Salary: " + salary.ToString("C"));
