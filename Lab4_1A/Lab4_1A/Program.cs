@@ -25,6 +25,7 @@ namespace Lab4_1A
             bool rightTriangleA = Math.Pow(sideA, 2) == (Math.Pow(sideB, 2) + Math.Pow(sideC, 2));
             bool rightTriangleB = Math.Pow(sideB, 2) == (Math.Pow(sideA, 2) + Math.Pow(sideC, 2));
             bool rightTriangleC = Math.Pow(sideC, 2) == (Math.Pow(sideB, 2) + Math.Pow(sideA, 2));
+
             // if logic
             if ( rightTriangleA || rightTriangleB || rightTriangleC)
             {
