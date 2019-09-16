@@ -22,10 +22,11 @@ namespace Lab4_1A
             sideB = Convert.ToDouble(ReadLine());
             sideC = Convert.ToDouble(ReadLine());
 
-            bool rightTriangle = Math.Pow(sideA, 2) == (Math.Pow(sideB, 2) + Math.Pow(sideC, 2));
-
+            bool rightTriangleA = Math.Pow(sideA, 2) == (Math.Pow(sideB, 2) + Math.Pow(sideC, 2));
+            bool rightTriangleB = Math.Pow(sideB, 2) == (Math.Pow(sideA, 2) + Math.Pow(sideC, 2));
+            bool rightTriangleC = Math.Pow(sideC, 2) == (Math.Pow(sideB, 2) + Math.Pow(sideA, 2));
             // if logic
-            if( rightTriangle)
+            if ( rightTriangleA || rightTriangleB || rightTriangleC)
             {
                 WriteLine("this is a right triangle");
             }
