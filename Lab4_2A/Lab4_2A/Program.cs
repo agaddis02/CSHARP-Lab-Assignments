@@ -21,8 +21,8 @@ namespace Lab4_2A
             // Prompt the user
             WriteLine("Magic 8 Ball");
             WriteLine("Enter a yes or no question");
-            // Store answer
-            response = ReadLine();
+            // Wait for users input
+            ReadLine();
 
             WriteLine(" *Shake* *Shake* ");
 
