@@ -34,6 +34,7 @@ namespace Lab5_2C
                     }
                 }
                
+                
 
                 // 1 and 0 will read as prime although they arent 
                 if (num == 1)
