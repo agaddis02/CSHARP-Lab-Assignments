@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace Lab5_2B
 {
@@ -11,32 +12,32 @@ namespace Lab5_2B
         static void Main(string[] args)
         {
             // Declare Variables
-            int num, checker;
+            int num;
 
             // Prompt user and store value
-            Console.WriteLine("Enter a number: ");
-            num = Convert.ToInt32(Console.ReadLine());
+            WriteLine("Enter a number: ");
+            num = Convert.ToInt32(ReadLine());
 
             // 0 and 1 cant be prime
             if (num == 0 || num == 1)
             {
-                Console.WriteLine(num + " is not prime number");
+                WriteLine(num + " is not prime number");
             }
 
             else
             {
                 // as long as the number divided by 2 doesnt equal 1 or zero run code
-                for (checker = 2; checker <= num / 2; checker++)
+                for (int i = 2; i <= num / 2; i++)
                 {
                     // if the number is divisiablel by the checker, its not prime
-                    if (num % checker == 0)
+                    if (num % i == 0)
                     {
-                        Console.WriteLine(num + " is not prime number");
+                        WriteLine(num + " is not prime number");
                         return;
                     }
 
                 }
-                Console.WriteLine(num + " is a prime number");
+                WriteLine(num + " is a prime number");
             }
         }
     }

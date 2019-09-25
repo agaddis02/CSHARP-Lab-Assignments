@@ -7,57 +7,61 @@ namespace Lab5_2C
     {
         static void Main(string[] args)
         {
+                
+
+
+            
             // Declare Variables
-            int num = -1, checker = 0, flag = 0;
+            int num = 1;
 
-
-
-            // User doesnt write a number = 0 continue prompting
-            while (num != 0)
+            while (num != 0) 
             {
-                // Prompt and store value
-                WriteLine("Enter the Number to check Prime: ");
+                    int count = 0;
+
+
+                // Prompt user and store value
+                WriteLine("Enter a number: ");
                 num = Convert.ToInt32(ReadLine());
 
-                // Checked number
-                checker = num / 2;
-
-                // as long as i is less than our given number divided by 2, continue to loop
-                for (int i = 2; i <= checker; i++)
+                // 0 and 1 cant be prime
+                if (num == 0 || num == 1)
                 {
-                    // if our numbe and i give us a remainder of zero it is not prime
-                    if (num % i == 0)
+                    WriteLine(num + " is not prime number");
+                }
+
+                else
+                {
+                    // as long as the number divided by 2 doesnt equal 1 or zero run code
+                    for (int i = 2; i <= num / 2; i++)
                     {
-                        WriteLine("Number is not Prime.");
-                        flag = 1;
-                        break;
+                        // if the number is divisiable by the checker, its not prime, increase counter
+                        if (num % i == 0)
+                        {
+                                count++;
+                        }
+
                     }
+
+                    // Check count, if count was increased beyond zero then it was not prime
+                    if(count > 0)
+                        {
+                            WriteLine(num + " is not prime a prime number");
+                        }
+                    // else it is prime
+                    else
+                        {
+                            WriteLine(num + " is a prime number");
+                        }
                 }
-               
-                
-
-                // 1 and 0 will read as prime although they arent 
-                if (num == 1)
-                {
-                    WriteLine(num + " is not a prime number");
-                }
-                else if(num == 0)
-                {
-                    WriteLine("You have now exitted the loop");
-                }
-                else if (flag == 0)
-                {
-                    WriteLine("Number is Prime.");
-                }
-
-
-
-                
+            } 
+            
 
 
 
 
-            }
+
+
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Lab5_2A
         {
 
             // Declare variables
-            int num, checker;
+            int num;
 
             // Prompt user and store value
             WriteLine("Enter a Number: ");
@@ -23,12 +23,12 @@ namespace Lab5_2A
             WriteLine("The Factors of " + num + " are : ");
 
             // for as long as checker is less than or equal to the inputted number continue running
-            for (checker = 1; checker<= num; checker++)
+            for (int i = 1; i<= num; i++)
             {
                 // if the number divided by the checker has a remainder of zero, its a divisor
-                if (num % checker == 0)
+                if (num % i == 0)
                 {
-                    WriteLine(checker);
+                    WriteLine(i);
                 }
             }
 
