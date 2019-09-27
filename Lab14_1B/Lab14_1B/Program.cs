@@ -19,18 +19,30 @@ namespace Lab14_1B
             // Decalre the varuiable
             int num;
 
-            // Store Value
-            Write("Input the number (Table to be calculated) : ");
-            num = Convert.ToInt32(ReadLine());
+
+
+            do
+            {
+                // Store Value
+                Write("Enter a number between 1 and 10: ");
+                num = Convert.ToInt32(ReadLine());
+            // If the user enters a number that is great than 10 or les than one make the user enter a number again
+            } while (num < 1 || num > 10);
 
             // As long as i is less than or equal to 10 multiple the users number by i 
             for (int i = 1; i <= 10; i++)
-            {
+                {
 
-                writer.WriteLine("" + num + " X " + i + " = "+ num * i);
-                writer.WriteAsync("" + num + " X " + i + " = " + num * i);
-               
-            }
+                    writer.WriteLine("" + num + " X " + i + " = " + num * i);
+                }
+            
+
+
+
+
+
+            writer.Close();
+            outfile.Close();
         }
     }
 }
