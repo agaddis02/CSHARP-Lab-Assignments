@@ -64,6 +64,10 @@ namespace Lab14_2C
             WriteLine("Highest Temperature: " + high);
             WriteLine("The Average Temperature: " + (int)average);
 
+            // close all readers or writers
+            reader.Close();
+            infile.Close();
+
 
         }
     }
