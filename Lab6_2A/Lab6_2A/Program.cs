@@ -40,6 +40,9 @@ namespace Lab6_2A
                     WriteLine("\n^^This is a decreasing array^^");
                 }
 
+
+                reader.Close();
+                infile.Close();
             }
             else
             {
