@@ -5,6 +5,10 @@ using static System.Console;
 
 namespace Lab6_2A
 {
+    /*
+     * Adam Gaddis
+     * this code reads in a file, astores the values in an array, and determines if the numbers are decreasing or increasing
+     * */
     class Program
     {
         static void Main(string[] args)

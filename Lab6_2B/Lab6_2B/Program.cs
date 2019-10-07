@@ -5,13 +5,17 @@ using static System.Console;
 using static System.Random;
 namespace Lab6_2B
 {
+    /*
+     * Adam Gaddis
+     * This program generates an array of 20 random numbers, then prompts the user to enter a number, the program then prints the array sorted, and prints a statement saying if the users number was found in out array  
+     * */
     class Program
     {
         static void Main(string[] args)
         {
             // Declare Variables
             int[] numbers = new int[20];
-            int userSearch, randoNum, target, resulte;
+            int userSearch, randoNum, target;
 
             // create random
             Random random = new Random();
