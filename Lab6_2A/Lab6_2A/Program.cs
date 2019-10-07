@@ -16,7 +16,7 @@ namespace Lab6_2A
             if(File.Exists("Lab6_2A.txt")){
                 // Declare Variables
                 int[] numbers = new int[20];
-
+                int flagP = 0, flagN = 0;
                 // Create our reader
                 FileStream infile = new FileStream("Lab6_2A.txt", FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(infile);
@@ -26,6 +26,19 @@ namespace Lab6_2A
                 {
                     numbers[i] = int.Parse(reader.ReadLine());
 
+
+                }
+                // Check to make sure each number is increasing
+                for (int k = 0; k < 19; k++)
+                {
+                    if (numbers[k] < numbers[k+1])
+                    {
+                        flagP++;
+                    }
+                    if (numbers[k] > numbers[k + 1])
+                    {
+                        flagN++;
+                    }
                 }
 
 
@@ -34,12 +47,13 @@ namespace Lab6_2A
                 {
                     Write(numbers[j] + " ");
                 }
-
-                if(numbers[1] < numbers[numbers.Length - 1])
+                // within a 20 item array, the flag should be exactly 19 each time if it is a increasing array
+                if(flagP == 19)
                 {
                     WriteLine("\n^^This is a increasing array^^");
                 }
-                else
+                // is flag is never triggered then it is decreasing
+                else if (flagN == 0)
                 {
                     WriteLine("\n^^This is a decreasing array^^");
                 }

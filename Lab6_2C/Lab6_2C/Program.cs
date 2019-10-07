@@ -6,6 +6,10 @@ using System.Linq;
 
 namespace Lab6_2C
 {
+    /*
+     * Adam Gaddis
+     * The program finds the amount of odd numbers within a 2d array of integers
+     * */
     class Program
     {
         static void Main(string[] args)
@@ -14,68 +18,61 @@ namespace Lab6_2C
             if (File.Exists("Lab6_2C.txt"))
             {
                 // Constants 
-                const int ROWS = 10;
-                const int COLUMNS = 10;
                 const char DELIM = ',';
 
                 // Declare Variables
-                int[,] numbers = new int[ROWS, COLUMNS];
+                int[,] numbers = new int[10, 10];
+                int odd = 0, even = 0;
                 string line;
-                string[] nums = new string[100];
+                string[] fields;
 
                 // Create our reader 
                 FileStream infile = new FileStream("Lab6_2C.txt", FileMode.Open, FileAccess.Read);
                 StreamReader reader = new StreamReader(infile);
 
-                line = reader.ReadLine();
-
-                while (line!= null)
+                for (int i = 0; i < 10; i++)
                 {
-                    nums = line.Split(DELIM);
                     line = reader.ReadLine();
-                }
-
-                int rows = nums.Count();
-
-                int columns = nums[0].Split(new char[] { DELIM },
-                                          StringSplitOptions.RemoveEmptyEntries).Count();
-
-                for (int rowCounter = 0; rowCounter < rows; rowCounter++)
-                {
-                    string[] record = nums[rowCounter].Split(DELIM);
-                    for (int columnCounter = 0; columnCounter < columns; columnCounter++)
+                    fields = line.Split(DELIM);
+                    for (int j = 0; j < 10; j++)
                     {
-                        numbers[rowCounter, columnCounter] = int.Parse(record[columnCounter]);
-                    }
-
-                }
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    for (int j =0; j < numbers.Length; j++)
-                    {
-                        WriteLine(numbers[i,j]);
+                        numbers[i, j] = int.Parse(fields[j]);
+                        if (int.Parse(fields[j]) % 2 != 0)
+                        {
+                            odd++;
+                        }
+                        else
+                        {
+                            even++;
+                        }
                     }
                 }
+
+                for (int i = 0; i < 10; i++)
+                {
+                    int j = 0;
+                    Write("\n");
+                    for (j = 0; j < 10; j++)
+                    {
+                        Write(numbers[i, j]);
+                        Write(" ");
+                    }
+                }
+
+                WriteLine();
+                WriteLine("\nOdd Numbers: " + odd);
+                WriteLine("Even Numbers: " + even);
+
+                reader.Close();
+                infile.Close();
             }
             else
             {
                 WriteLine("File does not exist");
             }
 
-            /*
-            line = reader.ReadLine();
 
-            for (int i = 0; i < ROWS; i++)
-            {
-                for (int j = 0; j < COLUMNS; j++)
-                {
 
-                    numbers[i, j] = line.Split(DELIM);
-                    reader.ReadLine();
-                    WriteLine(numbers[i, j]);
-                }
-            }
-            */
 
 
 
