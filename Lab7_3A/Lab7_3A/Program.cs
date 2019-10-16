@@ -17,13 +17,13 @@ namespace Lab7_3A
 
             Choices usersChoice;
             ;
-            WriteLine("Enter 0 for Rock, 1 for paper, and 2 for Scissors");
+            WriteLine("Enter 0 for rock, 1 for paper, 2 for scissors, 3 for lizard, 4 for spock");
             usersChoice = (Choices)int.Parse(ReadLine());
             
             DetermineWinner(ProgramChoice(), usersChoice);
         }
 
-        public static Choices ProgramChoice()
+        static Choices ProgramChoice()
         {
             int rando;
             Choices computerPlay;
@@ -37,7 +37,7 @@ namespace Lab7_3A
             return computerPlay;
         }
 
-        public static void DetermineWinner(Choices computer, Choices user)
+        static void DetermineWinner(Choices computer, Choices user)
         {
             switch (computer)
             {
@@ -161,7 +161,64 @@ namespace Lab7_3A
                 // user wins
                 WriteLine("computer losess to user");
             }
+            else if (user == Choices.Scissors && computer == Choices.Lizard)
+            {
+                // user wins
+                WriteLine("computer losess to user");
+            }
+            else if (user == Choices.Scissors && computer == Choices.Spock)
+            {
+                // computer wins
+                WriteLine("user losess to computer");
+            }
             // Scissors
+
+            // Lizard
+            else if (user == Choices.Lizard && computer == Choices.Scissors)
+            {
+                //computer Wins
+                WriteLine("user losess to computer");
+            }
+            else if (user == Choices.Lizard && computer == Choices.Paper)
+            {
+                // user wins
+                WriteLine("user beats computer");
+            }
+            else if (user == Choices.Lizard && computer == Choices.Rock)
+            {
+                // computer wins
+                WriteLine("computer beats user");
+            }
+            else if (user == Choices.Lizard && computer == Choices.Spock)
+            {
+                // user wins
+                WriteLine("user beats computer");
+            }
+            // Lizard
+
+            // Spock
+            else if (user == Choices.Spock && computer == Choices.Scissors)
+            {
+                // user wins
+                WriteLine("computer losess to user");
+            }
+            else if (user == Choices.Spock && computer == Choices.Paper)
+            {
+                // computer wins
+                WriteLine("computer beats user");
+            }
+            else if (user == Choices.Spock && computer == Choices.Rock)
+            {
+                // user wins
+                WriteLine("user beats computer");
+            }
+            else if (user == Choices.Spock && computer == Choices.Lizard)
+            {
+                // computer wins
+                WriteLine("computer beats computer");
+            }
+            // Spock
+
             else
             {
                 WriteLine("error");
