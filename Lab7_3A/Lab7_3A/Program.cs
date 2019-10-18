@@ -6,11 +6,14 @@ namespace Lab7_3A
 {
     /*
      * Adam Gaddis
-     * This rogram plays a basic game of rock, paper, scissors with the user
+     * This rogram plays a basic game of rock, paper, scissors, Lizard, and Spock with the user
      * */
+    enum Choices { Rock, Paper, Scissors, Lizard, Spock };
+
+
     class Program
     {
-        enum Choices  {Rock, Paper, Scissors, Lizard, Spock};
+
 
         static void Main(string[] args)
         {
@@ -23,7 +26,7 @@ namespace Lab7_3A
             DetermineWinner(ProgramChoice(), usersChoice);
         }
 
-        static Choices ProgramChoice()
+        public static Choices ProgramChoice()
         {
             int rando;
             Choices computerPlay;
@@ -37,7 +40,7 @@ namespace Lab7_3A
             return computerPlay;
         }
 
-        static void DetermineWinner(Choices computer, Choices user)
+        public static void DetermineWinner(Choices computer, Choices user)
         {
             switch (computer)
             {
