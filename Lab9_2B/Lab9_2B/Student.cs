@@ -4,6 +4,10 @@ using System.IO;
 
 namespace Lab9_2B
 {
+    /*
+     * Adam Gaddis
+     * Creates a student, computes average, and overloads the < > operators
+     * */
     class Student
     {
         private string firstN, lastN, major;
@@ -56,5 +60,37 @@ namespace Lab9_2B
             average = sumScores / 3;
             printStuff();
         }
+
+
+        public static bool operator <(Student studentA, Student studentB)
+        {
+            if (studentA.average < studentB.average)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static bool operator >(Student studentA, Student studentB)
+        {
+            if (studentA.average > studentB.average)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+
     }
 }

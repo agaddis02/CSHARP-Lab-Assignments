@@ -4,6 +4,10 @@ using System.IO;
 
 namespace Lab9_2B
 {
+    /*
+     * Adam Gaddis
+     * Uses the student class to input values from a text file, and compare averages
+     * */
     class Program
     {
         static void Main(string[] args)
@@ -58,6 +62,17 @@ namespace Lab9_2B
             student4.setTest(85,88,92);
             student4.computeAvg();
 
+            
+
+            
+            if (student2 < student3)
+            {
+                WriteLine("Student 2's average is higher than student 3's.");
+            }
+            else
+            {
+                WriteLine("Student 2's average is lower than student 3's.");
+            }
         }
     }
 }
