@@ -65,13 +65,13 @@ namespace Lab9_2B
             
 
             
-            if (student2 < student3)
+            if (student2 < student4)
             {
-                WriteLine("Student 2's average is higher than student 3's.");
+                WriteLine("Student 2's average is lower than student 4's.");
             }
             else
             {
-                WriteLine("Student 2's average is lower than student 3's.");
+                WriteLine("Student 2's average is higher than student 4's.");
             }
         }
     }
