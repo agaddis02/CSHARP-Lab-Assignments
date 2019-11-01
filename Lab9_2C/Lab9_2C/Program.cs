@@ -14,6 +14,7 @@ namespace Lab9_2C
         {
 
             double total = 0, grandtotal =0;
+            string hName = " ";
             Item[] grocerys = new Item[5];
 
             grocerys[0] = new Item("Carrots", 1.04, 3);
@@ -34,7 +35,8 @@ namespace Lab9_2C
                 if ((grocerys[i].getPrice() * grocerys[i].getQuantity()) > total)
                 {
                     total = grocerys[i].getPrice() * grocerys[i].getQuantity();
-                    WriteLine("Curent Most Expensive Item: " + grocerys[i].getName());
+                    hName = grocerys[i].getName();
+                    
                 }
 
                 WriteLine("Current ShoppingnCart Price is: " + grandtotal);
@@ -44,7 +46,7 @@ namespace Lab9_2C
 
             WriteLine("-----------------Final Price------------------");
             WriteLine("----------------Shopping Cart: " + grandtotal);
-            WriteLine("----------------Most Expensive Item: " + total);
+            WriteLine("----------------Most Expensive Item: " + hName + ", Total Spent: " + total);
         }
     }
 }
